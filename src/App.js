@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 const App = () => {
 
-  const [value, setValue] = useState({normal: "", texto: "", select: "", check: false})
+  const [value, setValue] = useState({normal: "", texto: "", select: "", check: false, estado: "feliz"})
   const handleChange = ({target}) => {
     setValue({
       ...value,
@@ -34,6 +34,14 @@ const App = () => {
         onChange={handleChange}
         checked={value.check}
       />
+
+
+      <div>
+        <label>Chancho</label>
+        <input onChange={handleChange} type="radio" value="feliz" name="estado" checked={value.estado === "feliz"}/> feliz
+        <input onChange={handleChange} type="radio" value="triste" name="estado" checked={value.estado === "triste"}/> triste
+        <input onChange={handleChange} type="radio" value="felipe" name="estado" checked={value.estado === "felipe"}/> felipe
+      </div>
     </div>
   )
 }
